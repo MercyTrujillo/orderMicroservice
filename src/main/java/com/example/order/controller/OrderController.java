@@ -21,6 +21,11 @@ public class OrderController {
     }
 
 
+    @PostMapping("/customer/create/{clienteId}")
+    public String createOrder(@PathVariable Integer customerId){
+        return orderService.createOrder(customerId);
+    }
+
     @RequestMapping(method = RequestMethod.GET,value = "/order/{orderId}")
     public Optional<Order> getOrder(@PathVariable Integer orderId){
         return orderService.getOrder(orderId);
